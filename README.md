@@ -3,7 +3,7 @@
 Runs Rails migrations in a Redis-backed mutex.
 
 If you deploy your application to multiple servers and do not use a deployment tool
-like Capybara, this gems makes sure that only one of your servers run the database migrations.
+like Capistrano, this gems makes sure that only one of your servers run the database migrations.
 
 Running Rails migrations on multiple instance at the same time should not cause any real trouble,
 because they are run inside transactions, but can cause excessive DB load and Ruby exceptions.
