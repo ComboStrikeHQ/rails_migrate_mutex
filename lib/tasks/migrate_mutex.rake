@@ -1,7 +1,7 @@
 namespace :db do
   namespace :migrate do
     task :mutex do
-      TIMEOUT = 5 * 60
+      TIMEOUT = 5 * 60 * 60
 
       RedisClassy.redis ||= Redis.current
 
