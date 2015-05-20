@@ -1,5 +1,7 @@
 # Rails db:migrate:mutex
 
+[![Circle CI](https://circleci.com/gh/ad2games/rails_migrate_mutex.svg?style=svg)](https://circleci.com/gh/ad2games/rails_migrate_mutex)
+
 Runs Rails migrations in a Redis-backed mutex.
 
 If you deploy your application to multiple servers and do not use a deployment tool
