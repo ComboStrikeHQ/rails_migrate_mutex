@@ -1,3 +1,6 @@
+dependencies:
+  post:
+    - bundle update
 test:
   pre:
     - bundle exec rake rubocop
