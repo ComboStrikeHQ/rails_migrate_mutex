@@ -1,5 +1,6 @@
 namespace :db do
   namespace :migrate do
+    desc 'Runs db:migrate in a redis-backed mutex'
     task :mutex do
       TIMEOUT = 5 * 60 * 60
 
