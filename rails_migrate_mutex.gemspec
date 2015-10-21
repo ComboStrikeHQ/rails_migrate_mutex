@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.homepage = 'http://www.ad2games.com'
   s.license = ''
 
-  s.add_dependency 'rake'
+  s.add_dependency 'railties'
   s.add_dependency 'redis-mutex'
 
   s.add_development_dependency 'rspec'
