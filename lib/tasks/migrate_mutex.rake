@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 namespace :db do
   namespace :migrate do
     desc 'Runs db:migrate in a redis-backed mutex'

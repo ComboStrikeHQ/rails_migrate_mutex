@@ -1,8 +1,9 @@
+# frozen_string_literal: true
 # Instead of using a whole rails app fixture, let's just assume this is how Railties work.
 module Rails
   class Railtie
     def self.rake_tasks
-      fail 'Rake should not be loaded until this point' if defined?(Rake)
+      raise 'Rake should not be loaded until this point' if defined?(Rake)
 
       require 'rake'
       yield
@@ -25,7 +26,7 @@ RSpec.describe 'rails-migrate-mutex' do
   before { redis.flushdb }
 
   it 'runs db:migrate in a redis mutex' do
-    2.times.map do
+    Array.new(2) do
       Thread.new { Rake::Task['db:migrate:mutex'].invoke }
     end.map(&:join)
 

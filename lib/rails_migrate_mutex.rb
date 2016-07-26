@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 if defined?(Rails)
   class RailsMigrateMutexRailtie < Rails::Railtie
     rake_tasks do
