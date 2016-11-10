@@ -2,7 +2,7 @@
 namespace :db do
   namespace :migrate do
     desc 'Runs db:migrate in a redis-backed mutex'
-    task :mutex do
+    task :mutex => :environment do
       TIMEOUT = 5 * 60 * 60
 
       RedisClassy.redis ||= Redis.current
