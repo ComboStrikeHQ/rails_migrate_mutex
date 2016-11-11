@@ -3,7 +3,7 @@ $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name = 'rails_migrate_mutex'
-  s.version = '1.1.1'
+  s.version = '1.2.0'
   s.summary = 'Runs Rails migrations in a Redis-backed mutex.'
   s.description = s.summary
   s.authors = ['ad2games GmbH']
