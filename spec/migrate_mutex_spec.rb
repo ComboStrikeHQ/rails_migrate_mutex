@@ -13,6 +13,10 @@ end
 
 require 'rails_migrate_mutex'
 
+task :environment do
+  Redis.current = Redis.new
+end
+
 namespace :db do
   task :migrate do
     Redis.current.incrby('db-migrate-call-count', 1)
@@ -23,7 +27,13 @@ end
 RSpec.describe 'rails-migrate-mutex' do
   let(:redis) { Redis.current }
 
-  before { redis.flushdb }
+  before do
+    redis.flushdb
+
+    # Stub redis instance, so we can test that it will be set in the environment task,
+    # which needs to run before we use redis again.
+    Redis.current = :stub
+  end
 
   it 'runs db:migrate in a redis mutex' do
     Array.new(2) do
