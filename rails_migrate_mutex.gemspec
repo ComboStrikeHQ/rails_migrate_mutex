@@ -3,7 +3,7 @@ $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name = 'rails_migrate_mutex'
-  s.version = '1.2.0'
+  s.version = '1.2.1'
   s.summary = 'Runs Rails migrations in a Redis-backed mutex.'
   s.description = s.summary
   s.authors = ['ad2games GmbH']
@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'railties'
   s.add_dependency 'redis-mutex'
+  s.add_dependency 'redis-classy', '>= 2.3.1'
 
   s.add_development_dependency 'rspec'
 end
